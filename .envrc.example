@@ -1,0 +1,30 @@
+
+export LIVEBOOK_SECRET_KEY_BASE=[key]
+export LIVEBOOK_PORT=8080
+export LIVEBOOK_PASSWORD=[password]
+
+export BUNDLE_GEMFILE=.overcommit_gems.rb
+
+## Erlang ASDF install options
+export CFLAGS="-O2 -g -fno-stack-check"
+export KERL_CONFIGURE_OPTIONS="--without-javac --with-ssl=/usr/local/opt/openssl"
+export KERL_BUILD_DOCS="yes"
+
+## Postgres ASDF install options
+# export LDFLAGS=-L/usr/local/opt/openssl/lib
+# export CPPFLAGS=-I/usr/local/opt/openssl/include
+# export PATH="/usr/local/opt/openssl/bin:$PATH"
+export POSTGRES_EXTRA_CONFIGURE_OPTIONS="--with-openssl --with-includes=/usr/local/opt/openssl/include --with-libraries=/usr/local/opt/openssl/lib --with-uuid=e2fs"
+
+## Skip Credo and Dialyzer overcommit checks during commits, if the checks take too long to execute
+# export SKIP=Credo,SimpleCredo,Dialyzer
+
+## Bespoke HTTP and HTTPs ports
+# export PORT=400x
+# export SSL_PORT=4443
+
+## Bespoke database port (e.g. for dev/test env)
+# export DATABASE_PORT=543x
+
+## Bespoke test server port (e.g. for local test env)
+# export TEST_PORT=400x
